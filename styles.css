@@ -1,0 +1,287 @@
+/* variables */
+:root {
+  --clr-primary-magenta: hsl(300, 43%, 22%);
+  --clr-primary-pink: hsl(333, 80%, 67%);
+  --clr-ntrl-magenta-drk: hsl(303, 10%, 53%);
+  --clr-ntrl-magenta-lt: hsl(300, 24%, 96%);
+  --clr-ntrl-white: hsl(0, 0%, 100%);
+  --ff-base: "League Spartan", sans-serif;
+}
+
+/* reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  min-height: 100vh;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+/* base styles */
+main {
+  font-family: var(--ff-base);
+  background-color: var(--clr-ntrl-white);
+}
+
+.rating-card {
+  background-color: var(--clr-ntrl-magenta-lt);
+  border-radius: 1rem;
+}
+
+.review-card {
+  background-color: var(--clr-primary-magenta);
+  border-radius: 1rem;
+}
+
+.profile img {
+  border-radius: 50%;
+}
+
+.review-content p::before,
+.review-content p::after {
+  content: "\"";
+}
+
+/* fonts */
+h1,
+#body-copy,
+.rating-card p {
+  color: var(--clr-primary-magenta);
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 0.8;
+}
+
+#body-copy {
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+
+.rating-card p {
+  font-weight: 700;
+}
+
+.name {
+  color: var(--clr-ntrl-magenta-lt);
+  font-weight: 700;
+}
+
+.status {
+  color: var(--clr-primary-pink);
+}
+
+.review-content {
+  color: var(--clr-ntrl-magenta-lt);
+  font-weight: 500;
+}
+
+/* mobile styles */
+body {
+  background-image:
+    url(/images/bg-pattern-top-mobile.svg),
+    url(/images/bg-pattern-bottom-mobile.svg);
+  background-repeat: no-repeat;
+  background-position:
+    top left,
+    bottom right;
+}
+
+main {
+  margin: 8rem auto;
+  width: 32.7rem;
+  display: grid;
+  grid-template-rows: 100% 100% 100%;
+  gap: 45px 0;
+}
+
+#heading {
+  grid-row: 1 / 2;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 0;
+}
+
+#rating {
+  grid-row: 2 / 3;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1.6rem;
+}
+
+.rating-card {
+  padding: 1.2rem 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.star-container img {
+  padding: 0 2px;
+}
+
+#review {
+  grid-row: 3 / 4;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1.6rem;
+}
+
+.review-card {
+  padding: 4rem 3.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile-img img {
+  width: 85%;
+}
+
+/* desktop styles */
+@media screen and (min-width: 1200px) {
+  body {
+    background-image:
+      url(/images/bg-pattern-top-desktop.svg),
+      url(/images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat;
+    background-position:
+      top left,
+      bottom right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    width: 111rem;
+    height: 60rem;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+  }
+
+  #heading {
+    grid-area: 1 / 1 / 2 / 2;
+    text-align: left;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+    padding-right: 12rem;
+  }
+
+  h1 {
+    font-size: 5.6rem;
+  }
+
+  #rating {
+    grid-area: 1 / 2 / 2 / 3;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1.6rem;
+    padding: 2rem;
+    padding-right: 0;
+  }
+
+  .rating-card {
+    width: 44.5rem;
+    height: 5.6rem;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    gap: 2rem;
+    align-items: center;
+    justify-items: left;
+  }
+
+  .rating-card:nth-of-type(2) {
+    margin-left: 5rem;
+  }
+
+  .rating-card:nth-of-type(3) {
+    margin-left: 10rem;
+  }
+
+  .star-container {
+    grid-column: 1 / 2;
+  }
+
+  .rating-card p {
+    grid-column: 2 /3;
+  }
+
+  .star-container img {
+    padding: 0 2px;
+  }
+
+  #review {
+    grid-area: 2 / 1 / 3 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-top: 4rem;
+  }
+
+  .review-card {
+    width: 35rem;
+    height: 23.4rem;
+    padding: 4rem 3.2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .review-card:nth-of-type(2) {
+    margin-top: 2rem;
+  }
+
+  .review-card:nth-of-type(3) {
+    margin-top: 4rem;
+  }
+
+  .profile {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .profile-img img {
+    width: 85%;
+  }
+
+
+}
